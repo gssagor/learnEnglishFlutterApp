@@ -107,6 +107,7 @@ class Word extends StatelessWidget {
                         ]
                     ),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text("Put",style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w500,fontSize: 16),),
@@ -127,6 +128,7 @@ class Word extends StatelessWidget {
                         boxShadow: [new BoxShadow(color: Colors.black12,offset: new Offset(2.0, 2.0), blurRadius: 2.0 )]
                     ),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text("Keep",style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w500,fontSize: 16),),
