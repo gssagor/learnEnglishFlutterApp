@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learnenglish/conversation.dart';
 import 'package:learnenglish/word.dart';
 class Home extends StatefulWidget {
   @override
@@ -106,37 +107,45 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
-                    padding: EdgeInsets.all(21),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(21),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey.withOpacity(.2),
-                              spreadRadius: 1.5,
-                              blurRadius: 1.5,
-                              offset: Offset(0, 1)
-                          )
-                        ]
-                    ),
-                    child: Row(
-                      children: <Widget>[
-                        Icon(Icons.train,size: 43, color: Color(0xFF8dc44a),),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 30),
-                          child: RichText(
-                            text: TextSpan(
-                              text: 'Travel \n',
-                              style:TextStyle(fontSize: 21, color: Colors.black, fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                                TextSpan(text: '(ভ্রমণ বিষয়ক)', style: TextStyle(fontSize: 16,color: Colors.black38)),
-                              ],
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=>Conversation()
+                      ));
+                    },
+                    child: Container(
+                      
+                      margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
+                      padding: EdgeInsets.all(21),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(21),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey.withOpacity(.2),
+                                spreadRadius: 1.5,
+                                blurRadius: 1.5,
+                                offset: Offset(0, 1)
+                            )
+                          ]
+                      ),
+                      child: Row(
+                        children: <Widget>[
+                          Icon(Icons.train,size: 43, color: Color(0xFF8dc44a),),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30),
+                            child: RichText(
+                              text: TextSpan(
+                                text: 'Travel \n',
+                                style:TextStyle(fontSize: 21, color: Colors.black, fontWeight: FontWeight.bold),
+                                children: <TextSpan>[
+                                  TextSpan(text: '(ভ্রমণ বিষয়ক)', style: TextStyle(fontSize: 16,color: Colors.black38)),
+                                ],
+                              ),
                             ),
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Container(
