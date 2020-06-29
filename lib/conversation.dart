@@ -14,8 +14,8 @@ class Conversation extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Container(
-                  width: ScreenUtil().setHeight(222),
-                  height: ScreenUtil().setWidth(222),
+                 /* width: ScreenUtil().setHeight(222),
+                  height: ScreenUtil().setWidth(222),*/
                   margin: EdgeInsets.only(top: 20,left: 10),
                   decoration: BoxDecoration(
                     color: Colors.white,

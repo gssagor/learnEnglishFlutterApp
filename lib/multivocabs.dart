@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:learnenglish/widgets/home_category_list.dart';
-class Home extends StatefulWidget {
+
+class Multivocabs extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _MultivocabsState createState() => _MultivocabsState();
 }
 
-class _HomeState extends State<Home> {
+class _MultivocabsState extends State<Multivocabs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +16,7 @@ class _HomeState extends State<Home> {
           SizedBox(height:29,),
           Expanded(
 
-            flex: 2,
+            flex: 1,
             child: Row(
               children: <Widget>[
                 Container(
@@ -55,7 +54,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           Expanded(
-            flex: 7,
+            flex: 6,
             child: Container(
               padding: EdgeInsets.only(top:12),
               width: double.infinity,
@@ -63,33 +62,50 @@ class _HomeState extends State<Home> {
                   color: Colors.white,
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(70))
               ),
-              child: HomeCategoryList(),
+              child: ListView(
+                children: <Widget>[
+
+
+                  Container(
+                    margin: EdgeInsets.fromLTRB(30, 0, 30, 10),
+                    padding: EdgeInsets.all(21),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(21),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey.withOpacity(.2),
+                              spreadRadius: 1.5,
+                              blurRadius: 1.5,
+                              offset: Offset(0, 1)
+                          )
+                        ]
+                    ),
+                    child: Row(
+                      children: <Widget>[
+                        Icon(Icons.library_books,size: 43, color: Color(0xFF8dc44a),),
+                        Padding(
+                          padding: const EdgeInsets.only(left:30),
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'Vocabulary\n',
+                              style:TextStyle(fontSize: 21, color: Colors.black, fontWeight: FontWeight.bold),
+                              children: <TextSpan>[
+                                TextSpan(text: "(গুরুত্বপূর্ণ শব্দতালিকা)", style: TextStyle(fontSize: 16,color: Colors.black38)),
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+
+                ],
+              ),
             ),
           ),
         ],
       ),
-
-     /* bottomNavigationBar: Container(
-        child: BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home,color: Color(0xFF8dc44a),),
-              title: Text("home", style: TextStyle(color: Colors.black),),
-
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.play_circle_filled,color: Color(0xFF8dc44a),),
-              title: Text("Play quiz", style: TextStyle(color: Colors.black),),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_box,color: Color(0xFF8dc44a),),
-              title: Text("profile", style: TextStyle(color: Colors.black),),
-            ),
-          ],
-        ),
-      ),*/
     );
   }
 }
-
-

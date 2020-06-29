@@ -3,10 +3,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learnenglish/home.dart';
 
-class Splash extends StatelessWidget {
+class Splash extends StatefulWidget {
+  @override
+  _SplashState createState() => _SplashState();
+}
+
+class _SplashState extends State<Splash> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+      Duration(seconds: 3),
+        (){
+        Navigator.pushReplacement(context,MaterialPageRoute(
+        builder: (context)=>Home()
+        )
+
+        );
+        },
+    );
+  }
+
+
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context);
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -17,8 +43,8 @@ class Splash extends StatelessWidget {
             flex: 2,
             child: Container(
               margin: EdgeInsets.only(left:30),
-              width: ScreenUtil().setHeight(222),
-              height: ScreenUtil().setWidth(222),
+              /*width: ScreenUtil().setHeight(222),
+              height: ScreenUtil().setWidth(222),*/
               decoration:BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
@@ -40,8 +66,8 @@ class Splash extends StatelessWidget {
               height: 222,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(80))
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(80))
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -53,15 +79,15 @@ class Splash extends StatelessWidget {
                       mainAxisAlignment:MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text("Speaking English ain't so Tough",
-                        style: TextStyle(color: Color(0xFF8dc44a),
-                        fontWeight: FontWeight.bold,
-                          fontSize: 30
-                        ),),
+                          style: TextStyle(color: Color(0xFF8dc44a),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30
+                          ),),
                         SizedBox(height:35),
                         Text('বাংলা থেকে ইংরেজিতে কথা বলা শিখুন খুব সহজে। ',style: TextStyle(
-                          color: Color(0xFF8dc44a),
-                          fontSize: 20,
-                          fontWeight: FontWeight.w300
+                            color: Color(0xFF8dc44a),
+                            fontSize: 20,
+                            fontWeight: FontWeight.w300
                         ),),
                       ],
                     ),
@@ -72,7 +98,7 @@ class Splash extends StatelessWidget {
                       GestureDetector(
                         onTap: (){
                           Navigator.pushReplacement(context, MaterialPageRoute(
-                            builder: (context)=>Home()
+                              builder: (context)=>Home()
                           ));
                         },
                         child: Container(
@@ -85,9 +111,9 @@ class Splash extends StatelessWidget {
                           ),
                           child: Center(
                             child: Text('Next',
-                                style:TextStyle(color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize:20 ),
+                              style:TextStyle(color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize:20 ),
                             ),
                           ),
                         ),
@@ -104,3 +130,4 @@ class Splash extends StatelessWidget {
     );
   }
 }
+
