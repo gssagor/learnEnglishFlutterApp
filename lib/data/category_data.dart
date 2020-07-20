@@ -1,6 +1,7 @@
 import 'package:learnenglish/conversation.dart';
 import 'package:learnenglish/models/category_card_model.dart';
 
+import '../multivocabs.dart';
 import '../word.dart';
 
 final categories=[
@@ -8,7 +9,7 @@ final categories=[
   categoryName: 'Vocabulary \n',
   categoryNameBan:"(গুরুত্বপূর্ণ শব্দতালিকা)",
   iconName:'Icons.library_books',
-  pageLink: Word()
+  pageLink:Multivocabs()
   ),
 
   Category(

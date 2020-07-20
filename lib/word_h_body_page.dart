@@ -1,19 +1,13 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:learnenglish/widgets/word_list.dart';
+import 'package:learnenglish/widgets/word_human_body_list.dart';
 
-class Word extends StatelessWidget {
+class WordHBodyPage extends StatelessWidget {
   final FlutterTts flutterTts =FlutterTts();
 
   @override
   Widget build(BuildContext context) {
-
-    /*final List<String> texts=['take','put','keep'];*/
-
-
-
 
     return Scaffold(
 
@@ -25,8 +19,7 @@ class Word extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Container(
-                  /*width: ScreenUtil().setHeight(222),
-                  height: ScreenUtil().setWidth(222),*/
+
                   margin: EdgeInsets.only(top: 20,left: 10),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -36,14 +29,14 @@ class Word extends StatelessWidget {
                   ),
                   child: Container(
                     decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.white,width: 10)
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white,width: 10)
                     ),
                     child: Image.asset('assets/logogss.png',width: 35,height: 35,),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 30,left: 25),
+                    margin: EdgeInsets.only(top: 30,left: 25),
                     child: Text("ইংরেজি শব্দার্থ",style: TextStyle(color: Colors.white,fontSize: 23),)),
               ],
             ),
@@ -59,7 +52,7 @@ class Word extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(40)),
               ),
-              child: WordList(),
+              child: WordHBodyList(),
             ),
           )
         ],
